@@ -531,6 +531,8 @@ window.__rola = p => { const t = tl.scrollTrigger; scrollTo(0, t.start + (t.end 
 document.querySelectorAll('.v video').forEach((v, i) => { v.addEventListener('loadedmetadata', () => { v.currentTime = (i * 1.7) % Math.max(1, v.duration); }, { once: true }); });
 const olho = new IntersectionObserver(es => es.forEach(e => { const v = e.target; if (e.isIntersecting && getComputedStyle(v).visibility !== 'hidden') v.play().catch(() => {}); else v.pause(); }), { rootMargin: '120px' });
 document.querySelectorAll('video').forEach(v => olho.observe(v));
+// a abertura esconde a página enquanto roda: quando a página aparece (e no fim), os vídeos conferem de novo se estão na tela
+['abertura-entrega', 'abertura-fim'].forEach(ev => document.addEventListener(ev, () => document.querySelectorAll('video').forEach(v => { olho.unobserve(v); olho.observe(v); })));
 
 // cabeçalho: mede a largura da barra contraída (do tamanho do conteúdo) e contrai assim que a rolagem começa
 (() => {
@@ -1259,6 +1261,7 @@ function abertura(curta){
     .to(cabecalho(), { opacity: 1, y: 0, duration: .8, stagger: .05, ease: 'sara' }, 6.05);
   // 7. a página aberta se forma (as peças são medidas quando a página já está no lugar)
   const T0 = 5.3;
+  tl.call(() => document.dispatchEvent(new Event('abertura-entrega')), null, T0 - .2); // a página vai aparecer: os vídeos à vista começam a tocar
   const prepara = () => { if (P) return; P = pecas(d);
     P.tits.forEach(t => splits.push(SplitText.create(t, { type: 'lines', mask: 'lines' })));
     P.linhas = splits.flatMap(s => s.lines); mexidos = [...P.fotos, ...P.linhas, ...P.resto, document.querySelector('main')]; };
