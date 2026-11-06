@@ -300,7 +300,7 @@ html.viaja .vaga video{visibility:hidden}
 }
 @media (min-width:900px){
   .sara{padding:120px 20px 60px;grid-template-columns:min(860px,100%);justify-content:center} /* 860 px aprovado em 06/11 */
-  .s-foto{min-height:86vh}
+  .s-foto{min-height:0;aspect-ratio:4/5} /* opção 1 aprovada em 06/11 noite: retrato 4:5 (860 x 1075), não encolhe em janela baixa; celular continua como estava */
   .s-texto{padding:48px 46px 44px;max-width:700px}
   .sara h2{font-size:52px}
   .rodape{padding:28px 40px 40px}
@@ -321,6 +321,10 @@ html.viaja .vaga video{visibility:hidden}
 @media (min-width:900px){.mn{display:none!important}}
 /* ao pular para uma seção pelo menu, o título não fica escondido embaixo da barra flutuante */
 section[id]{scroll-margin-top:84px}
+/* textos corridos da seção A Sara e da Coleção no visual do texto de apoio da head, com uma palavra em destaque (06/11 noite) */
+.sara .apoio{font-size:19px;line-height:1.6;margin:0 0 14px}
+.dq-info .apoio.dq-texto{font-size:19px;line-height:1.6}
+@media (min-width:900px){.sara .apoio,.dq-info .apoio.dq-texto{font-size:21px}.sara:has(.s-foto img) .s-texto .apoio{color:var(--off)}}
 section[tabindex="-1"]:focus{outline:none} /* ao chegar pelo menu, o foco vai para a seção (leitores de tela), sem moldura */
 </style>
 <style>
