@@ -30,25 +30,29 @@ a{color:inherit}
 /* cabeçalho (06/11, inspirado no movimento da Mejuma): no topo a barra ocupa a largura toda, sem fundo;
    ao começar a rolar, ela se contrai para o centro (os itens deslizam das bordas para dentro), ganha fundo papel,
    cantos arredondados e flutua sobre o site. Uma barra só: nada aparece ou some de repente. */
+/* contração (06/11 noite): uma curva só, que sai rápido e assenta devagar, para todas as propriedades andarem juntas */
+:root{--cab-t:1s;--cab-c:cubic-bezier(.33,1,.68,1)}
 .topo{position:fixed;z-index:30;top:0;left:0;right:0;height:64px;pointer-events:none}
 .topo-vao{height:64px}
 .barra{pointer-events:auto;position:absolute;top:0;left:50%;transform:translateX(-50%);width:var(--w0,100%);height:64px;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:0 24px;
   background:rgba(243,245,246,0);border-radius:0;box-shadow:0 8px 28px rgba(2,53,68,0);
-  transition:width .8s cubic-bezier(.65,0,.2,1),top .8s cubic-bezier(.65,0,.2,1),height .8s cubic-bezier(.65,0,.2,1),padding .8s cubic-bezier(.65,0,.2,1),border-radius .8s cubic-bezier(.65,0,.2,1),background-color .5s ease,box-shadow .6s ease}
+  will-change:width,top,height;
+  transition:width var(--cab-t) var(--cab-c),top var(--cab-t) var(--cab-c),height var(--cab-t) var(--cab-c),padding var(--cab-t) var(--cab-c),border-radius var(--cab-t) var(--cab-c),background-color var(--cab-t) var(--cab-c),box-shadow var(--cab-t) var(--cab-c)}
 .barra .marca{display:block;flex:none}
-.barra .logo{width:150px;display:block;transition:width .8s cubic-bezier(.65,0,.2,1)}.barra .logo path{fill:var(--petroleo)}
+.barra .logo{width:150px;display:block;overflow:visible;transition:width var(--cab-t) var(--cab-c)} /* overflow visível: o desenho do nome passa um pouco do viewBox e era cortado no logo pequeno */.barra .logo path{fill:var(--petroleo)}
 .barra .links{display:flex;align-items:center;gap:14px;font-size:12.5px;letter-spacing:.03em;white-space:nowrap}
 .barra .links a{text-decoration:none}
 .barra .fala{flex:none;padding:5px;border-radius:14px}
 .barra .fala .rotulo{display:none}
 .barra .rosto{width:30px;height:30px}
 /* celular, no topo: só nome e menu; links e rosto entram ao contrair */
-.barra .links,.barra .fala{max-width:0;opacity:0;overflow:hidden;transition:max-width .8s cubic-bezier(.65,0,.2,1),opacity .5s ease}
-.barra .menu{max-width:44px;opacity:1;overflow:hidden;transition:max-width .6s ease,opacity .3s ease}
+.barra .links,.barra .fala{max-width:0;opacity:0;overflow:hidden;transition:max-width var(--cab-t) var(--cab-c),opacity .35s ease}
+.barra .menu{max-width:44px;opacity:1;overflow:hidden;transition:max-width var(--cab-t) var(--cab-c),opacity .35s ease}
 .compacta{top:10px;height:58px;width:var(--wc,360px);padding:0 8px 0 18px;background:rgba(243,245,246,1);border-radius:20px;box-shadow:0 8px 28px rgba(2,53,68,.10)}
 .compacta .logo{width:96px}
 .compacta .links{max-width:260px;opacity:1}
 .compacta .fala{max-width:60px;opacity:1}
+.compacta .links,.compacta .fala{transition:max-width var(--cab-t) var(--cab-c),opacity .6s ease .12s} /* ao contrair, os links entram um pouco depois do espaço abrir */
 .compacta .menu{max-width:0;opacity:0;pointer-events:none}
 .medindo,.medindo *{transition:none!important}
 .medindo{width:max-content!important}
@@ -544,7 +548,8 @@ document.querySelectorAll('video').forEach(v => olho.observe(v));
     barra.style.setProperty('--wc', wc + 'px');
   };
   let c = null;
-  const ve = () => { const on = scrollY > 40; if (on === c) return; c = on; barra.classList.toggle('compacta', on); };
+  // folga entre contrair (passou de 40) e abrir (voltou abaixo de 12), para a barra não tremer perto do limite
+  const ve = () => { const on = c ? scrollY > 12 : scrollY > 40; if (on === c) return; c = on; requestAnimationFrame(() => barra.classList.toggle('compacta', on)); };
   document.fonts.ready.then(() => { mede(); ve(); });
   addEventListener('scroll', ve, { passive: true });
   addEventListener('resize', () => { mede(); });
