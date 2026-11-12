@@ -390,7 +390,16 @@ body.abrindo{overflow:hidden}
 .ind{max-width:1240px;margin:0 auto;padding:22px 16px 70px}
 .ind-tt{max-width:760px;margin:0 auto 34px;text-align:center}
 .ind h1,.tx h1{font-family:var(--serifa);font-weight:400;font-size:40px;line-height:1.04;margin:0 0 14px}
-.at-dest{display:grid;gap:16px;text-decoration:none}.at-dest .at-v{aspect-ratio:4/5}.at-dest .at-txt{padding:0 4px}
+.at-dest{display:grid;gap:22px;text-decoration:none}.at-dest .at-txt{padding:0 4px}
+.mos{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:8px;aspect-ratio:1}.mos .g{grid-row:span 2}
+.mf{position:relative;overflow:hidden;border-radius:16px;background:#cbd2d7;display:block}.mf img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.at-dest:hover .mf img{transform:scale(1.04)}
+.ar-meta{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta);margin:0 0 14px}
+.ar-lead{font-family:var(--serifa);font-size:20px;line-height:1.4;color:var(--petroleo);margin:0 0 18px}
+.ar-por{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--tinta)}.ar-por .rosto{width:36px;height:36px}.ar-por .rosto img{width:100%;height:100%;object-fit:cover;display:block}.ar-por b{font-weight:400;color:var(--petroleo)}
+.ar-sobre{display:block;margin:16px 0 0;padding:12px 0 0;border-top:1px solid #dde2e6;font-size:13px;color:var(--tinta)}.ar-sobre .preco{white-space:nowrap}
+.ar-ler{display:inline-flex;align-items:center;gap:12px;margin:22px 0 0;font-size:15px;letter-spacing:.06em;color:var(--petroleo);border-bottom:1.5px solid var(--petroleo);padding-bottom:4px}
+.ar-ler:after{content:"";width:22px;height:1.5px;background:currentColor;transition:width .4s}.at-dest:hover .ar-ler:after{width:38px}
 .at-dest h2{font-family:var(--serifa);font-weight:400;font-size:30px;line-height:1.08;margin:0 0 8px}
 .ind .cs-tit{font-family:var(--serifa);font-weight:400;font-size:26px;margin:46px 4px 10px}
 /* página do texto */
@@ -426,7 +435,7 @@ body.abrindo{overflow:hidden}
 body.tem-bt{padding-bottom:76px}
 @media (min-width:900px){
   .ind{padding:40px 40px 100px}.ind h1,.tx h1{font-size:64px}.ind-tt{margin-bottom:60px}
-  .at-dest{grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}.at-dest .at-v{aspect-ratio:16/11}.at-dest h2{font-size:52px}
+  .at-dest{grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}.mos{aspect-ratio:16/12}.at-dest h2{font-size:52px}.ar-lead{font-size:24px}
   .ind .cs{display:grid;grid-template-columns:1fr 1fr;column-gap:40px}.ind .cs-tit{font-size:36px;margin-top:80px}
   .tx{padding:34px 40px 60px}
   .tx .capa{aspect-ratio:21/9}
@@ -440,7 +449,7 @@ body.tem-bt{padding-bottom:76px}
 }
 /* animações: enquanto a página monta, o que entra animado espera escondido (sem piscar) */
 .entra .ind-tt,.entra .tx-tt,.entra .tx-fx,.entra .at-dest .at-txt{opacity:0}
-.entra .tx .capa,.entra .at-dest .at-v{clip-path:inset(100% 0 0 0 round 20px)}
+.entra .tx .capa,.entra .at-dest .mos{clip-path:inset(100% 0 0 0 round 20px)}
 .espera{clip-path:inset(100% 0 0 0 round 20px)}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "A cobertura do Sidil", "name": "Por dentro da cobertura duplex de 389 m² no Sidil, em Divinópolis", "description": "Sara Silveira conta para quem indica a cobertura duplex do Sidil, em Divinópolis (MG): 389 m², terraço com spa, elevador privativo e o que pesar antes de decidir.", "inLanguage": "pt-BR", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "url": "indicacao-cobertura-duplex-sidil-divinopolis.html", "mainEntityOfPage": "indicacao-cobertura-duplex-sidil-divinopolis.html", "image": ["video/piaui/jantar-terraco-capa.jpg"], "author": {"@type": "Person", "@id": "head.html#sara", "name": "Sara Silveira", "jobTitle": "Corretora de imóveis", "identifier": {"@type": "PropertyValue", "name": "CRECI", "value": "64.725"}, "worksFor": {"@type": "RealEstateAgent", "@id": "head.html#imobiliaria", "name": "Sara Silveira Collection", "areaServed": [{"@type": "City", "name": "Divinópolis"}, {"@type": "City", "name": "Nova Serrana"}]}, "sameAs": ["https://www.instagram.com/sarasilveiracollection/"]}, "publisher": {"@type": "RealEstateAgent", "@id": "head.html#imobiliaria", "name": "Sara Silveira Collection", "areaServed": [{"@type": "City", "name": "Divinópolis"}, {"@type": "City", "name": "Nova Serrana"}]}, "about": {"@type": "RealEstateListing", "name": "A cobertura do Sidil", "url": "imovel-piaui.html"}, "contentLocation": {"@type": "Place", "name": "Sidil, Divinópolis (MG)", "address": {"@type": "PostalAddress", "addressLocality": "Divinópolis", "addressRegion": "MG", "addressCountry": "BR"}}, "isPartOf": {"@type": "Blog", "name": "Para quem eu indico?", "url": "indicacoes.html"}}</script>
@@ -671,7 +680,7 @@ const palavras = el => { const out = []; [...el.childNodes].forEach(n => {
     const linhas = []; ws.forEach(w => { const t = Math.round(w.getBoundingClientRect().top); let l = linhas.find(x => Math.abs(x.t - t) < 6); if (!l) linhas.push(l = { t, ws: [] }); l.ws.push(w); });
     linhas.forEach((l, i) => l.ws.forEach(w => an(w, [{ transform: 'translateY(110%)' }, { transform: 'none' }], { duration: 700, delay: d0 + 60 + i * 90 })));
     [q('.aviso-exemplo'), q('.tx-vendido'), q('.tx-ass')].forEach(el => an(el, [{ opacity: 0 }, { opacity: 1 }], { duration: 500, delay: d0 + 300 }));
-    const capa = q('.tx .capa') || q('.at-dest .at-v');
+    const capa = q('.tx .capa') || q('.at-dest .mos');
     if (!foto) an(capa, [{ clipPath: 'inset(100% 0 0 0 round 20px)' }, { clipPath: 'inset(0% 0 0 0 round 20px)' }], { duration: 900, delay: 200 });
     an(q('.tx-fx') || q('.at-dest .at-txt'), [{ opacity: 0, transform: 'translateY(30px)' }, { opacity: 1, transform: 'none' }], { duration: 700, delay: d0 + 550 });
     html.classList.remove('entra');
