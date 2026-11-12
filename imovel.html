@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Residência Oliva, casa de alto padrão à venda em Divinópolis | Sara Silveira</title>
 <meta name="description" content="Residência Oliva: casa de alto padrão à venda em Divinópolis (MG), com 4 suítes, 480 m² e piscina de borda infinita. Visita com Sara Silveira.">
@@ -71,7 +71,8 @@ a{color:inherit}
 .cantos .v{border-radius:20px 0 0 20px}
 /* todo cartão é vídeo (como será com os imóveis reais) */
 .v{position:relative;overflow:hidden;background:#cbd2d7}
-.v video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.v video,.midia>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ficha dd.falta{color:#8a959c}
 .depois{padding:24px 24px 0}
 .cartao2{display:none}
 .apoio{margin:0;font-size:19px;line-height:1.6;color:var(--petroleo)}
@@ -94,6 +95,7 @@ a{color:inherit}
 html.viaja .vaga video{visibility:hidden}
 @media (max-width:899px){html.viaja .vaga.fica-cel video{visibility:visible}}
 .vaga{background:transparent}
+.vaga img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .provisorio{position:absolute;z-index:1;left:12px;bottom:10px;font-size:11px;color:rgba(243,245,246,.85)}
 /* computador */
 @media (min-width:900px){
@@ -281,15 +283,20 @@ html.viaja .vaga video{visibility:hidden}
 .sara p{font-size:17px;line-height:1.65;margin:0 0 14px;color:inherit}
 .s-foto{position:relative;border-radius:var(--raio);overflow:hidden;background:var(--areia);min-height:92svh}
 .s-foto img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
-.s-foto:has(img)::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(1,26,33,.72),rgba(1,26,33,0) 62%);pointer-events:none}
+.s-foto:has(img)::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(1,26,33,.86) 0%,rgba(1,26,33,.66) 38%,rgba(1,26,33,0) 74%);pointer-events:none} /* 09/11: mais escuro e mais alto, a camiseta branca da foto oficial apagava as primeiras linhas */
 .s-texto{align-self:end;position:relative;z-index:1;padding:26px 22px 28px;color:var(--petroleo)}
 .sara:has(.s-foto img) .s-texto{color:var(--off)}
-.sara:has(.s-foto img) .s-miudo{color:rgba(243,245,246,.75)}
+.sara:has(.s-foto img) .s-miudo{color:rgba(243,245,246,.88)}
 .sara:has(.s-foto img) .b1{background:var(--areia);color:var(--petroleo)}
 .s-contato{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:22px}
 .s-contato .b1{display:inline-block}
+/* 09/11: botão e @ do Instagram da seção A Sara maiores */
+.sara .s-contato .b1{font-size:16px;padding:19px 30px;border-radius:16px}
+.sara .s-link{font-size:17px}
+@media (min-width:900px){.sara .s-contato .b1{font-size:17px;padding:21px 34px}.sara .s-link{font-size:19px}}
 .s-link{font-size:15px;text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1.5px no-repeat;padding-bottom:3px}
-.sara .s-miudo{font-size:13px;color:var(--tinta);margin-top:16px}
+.sara .s-miudo{font-size:15px;line-height:1.5;color:var(--tinta);margin-top:18px} /* 09/11: era 13 px, pequena demais */
+@media (min-width:900px){.sara .s-miudo{font-size:16px}}
 .rodape{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:space-between;font-size:13px;color:var(--tinta);padding:26px 16px 34px;max-width:1240px;margin:0 auto;border-top:1.5px solid #dde2e6}
 /* animação (06/11): a foto se revela de baixo para cima ao entrar (F1); as palavras ganham cor conforme a rolagem (T2) */
 .s-foto.espera{clip-path:inset(100% 0 0 0 round 26px)}
@@ -297,9 +304,9 @@ html.viaja .vaga video{visibility:hidden}
 @media (max-width:899px){
   .sara{grid-template-rows:auto auto auto auto}.sara>.s-texto{display:contents}
   .sara h2,.sara .s-contato{grid-area:1/1;align-self:end;position:relative;z-index:1}
-  .sara h2{margin:0 22px 96px}.sara .s-contato{margin:0 22px 30px}
+  .sara h2{margin:0 22px 150px}.sara .s-contato{flex-direction:column;align-items:flex-start;gap:16px} /* 09/11: com o botão e o @ maiores, empilhados no celular */.sara .s-contato{margin:0 22px 30px}
   .sara .s-texto p{grid-column:1;padding:0 12px;color:var(--petroleo)}
-  .sara .s-texto p:first-of-type{grid-row:2;padding-top:26px}.sara .s-texto p:nth-of-type(2){grid-row:3}.sara .s-miudo{grid-row:4;color:var(--tinta)}
+  .sara .s-texto p:first-of-type{grid-row:2;padding-top:26px}.sara .s-texto p:nth-of-type(2){grid-row:3}.sara .s-miudo,.sara:has(.s-foto img) .s-miudo{grid-row:4;color:var(--tinta)} /* 09/11: no celular a linha fica fora da foto; antes herdava o branco e sumia */
   .s-foto{min-height:82svh}
 }
 @media (min-width:900px){
@@ -332,6 +339,23 @@ section[id]{scroll-margin-top:84px}
 section[tabindex="-1"]:focus{outline:none} /* ao chegar pelo menu, o foco vai para a seção (leitores de tela), sem moldura */
 </style>
 <style>
+/* menu com "Indicações" e WhatsApp nos menus, aplicado 11/11 (copiado de blog_wpp.py, aprovado na conversa do blog) */
+/* ícone do WhatsApp nos menus (11/11, v2 "mais fino e elegante"): traço fino petróleo, botão mais baixo */
+.wpp{display:grid;place-items:center;flex:none;color:var(--petroleo)}.wpp svg{width:19px;height:19px;stroke-width:1.15}
+.barra .fala{gap:9px;padding:9px 16px 9px 13px;font-weight:300}
+.barra .fala .wpp{width:19px;height:19px}
+.mn-contato .b2{gap:12px;padding:14px 22px 14px 18px;font-weight:300}.mn-contato .wpp svg{width:21px;height:21px}
+/* acabamento B (aprovado 11/11): sem fundo, contorno de 1 px */
+.barra .fala,.mn-contato .b2{background:transparent;box-shadow:inset 0 0 0 1px rgba(2,53,68,.3)}
+/* celular (11/11): barra contraída "Imóveis · Indicações · A Sara"; "Coleção" continua no menu de tela cheia e no computador */
+@media (max-width:899px){.barra .links a[href$="#colecao"]{display:none}.compacta .links{gap:11px}}
+/* 11/11, aprovado: na barra contraída do celular o botão do WhatsApp fica quadrado (37 px) e, abaixo de 375 px, o nome um pouco menor; cabe em 390, 375 e 360 px */
+/* 11/11 (Vitor: "esse botão está desatualizado"): botões "Falar com a Sara" do corpo no mesmo acabamento B dos menus */
+.acoes .b2:has(>.wpp),.im-barra .b2:has(>.wpp){background:transparent;box-shadow:inset 0 0 0 1px rgba(2,53,68,.3);font-weight:300;gap:10px;padding:12px 20px 12px 16px}
+@media (max-width:899px){.compacta .fala{padding:9px}}
+@media (max-width:374px){.compacta .logo{width:84px}.compacta{padding-left:14px}}
+</style>
+<style>
 /* abertura (aprovada em 05/11) no site novo: o papel é o prateado do site */
 html.antes body>*:not(#abertura):not(.pular){visibility:hidden}
 body.abrindo{overflow:hidden}
@@ -361,7 +385,7 @@ body.abrindo{overflow:hidden}
 .im-outros{max-width:1240px;margin:0 auto;padding:40px 10px 30px}.im-outros h2{font-family:var(--serifa);font-weight:400;font-size:30px;margin:0 6px 18px}
 .im-outros .grade{display:grid;grid-template-columns:1fr;gap:14px}
 .im-outros .midia{position:relative;border-radius:20px 20px 14px 14px;aspect-ratio:1/1;overflow:hidden;background:#cbd2d7}
-.im-outros .midia video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.im-outros .midia video,.im-outros .midia img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .im-barra{position:fixed;left:10px;right:10px;bottom:10px;z-index:20;display:flex;gap:8px;background:var(--off);border-radius:18px;padding:8px;box-shadow:0 10px 30px rgba(2,53,68,.16)}
 .im-barra .b1{flex:1;text-align:center;padding:14px}.im-barra .b2{padding:6px 14px 6px 6px}
 /* a barra do celular só aparece quando nenhum par de botões da página está na tela (nunca duplica os botões) */
@@ -436,14 +460,14 @@ if (!window.__abre && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
 <header class="topo">
   <div class="barra" id="barra">
     <a class="marca" href="head.html" aria-label="Sara Silveira, início"><svg class="logo" viewBox="0 0 682 62" aria-label="Sara Silveira"><path d="M21.18 62.49 C17.86 62.49 14.73 61.91 11.80 60.76 C8.86 59.61 6.36 58.01 4.28 55.95 C2.20 53.90 0.78 51.53 0.00 48.83 L3.32 44.36 L3.90 44.44 C4.40 47.37 5.47 49.94 7.10 52.16 C8.74 54.38 10.77 56.11 13.21 57.35 C15.65 58.58 18.30 59.20 21.18 59.20 C24.29 59.20 27.01 58.67 29.37 57.60 C31.72 56.53 33.55 55.01 34.85 53.04 C36.15 51.08 36.80 48.77 36.80 46.13 C36.80 42.64 35.85 39.85 33.94 37.74 C32.03 35.63 29.27 34.04 25.67 32.97 L15.95 30.02 C13.18 29.18 10.79 28.10 8.77 26.78 C6.74 25.46 5.16 23.84 4.03 21.93 C2.89 20.02 2.33 17.74 2.33 15.10 C2.33 12.79 2.78 10.71 3.70 8.86 C4.61 7.00 5.88 5.41 7.52 4.09 C9.15 2.77 11.09 1.76 13.33 1.05 C15.58 0.35 18.03 0.00 20.69 0.00 C23.73 0.00 26.54 0.46 29.12 1.39 C31.69 2.32 33.88 3.63 35.68 5.31 C37.48 7.00 38.74 8.94 39.46 11.13 L36.55 15.52 L35.97 15.52 C35.14 11.69 33.36 8.70 30.61 6.54 C27.87 4.37 24.56 3.29 20.69 3.29 C17.81 3.29 15.30 3.74 13.17 4.64 C11.03 5.54 9.37 6.83 8.18 8.52 C6.99 10.20 6.40 12.20 6.40 14.51 C6.40 17.43 7.32 19.75 9.18 21.46 C11.03 23.18 13.71 24.57 17.20 25.64 L27.00 28.67 C29.93 29.52 32.44 30.68 34.52 32.17 C36.60 33.66 38.20 35.50 39.34 37.70 C40.47 39.89 41.04 42.50 41.04 45.54 C41.04 48.07 40.57 50.36 39.63 52.41 C38.69 54.46 37.32 56.25 35.52 57.77 C33.72 59.28 31.60 60.45 29.16 61.27 C26.72 62.08 24.06 62.49 21.18 62.49 Z"/><path d="M56.83 61.65 L56.83 61.06 C58.04 59.27 59.03 57.36 59.78 55.36 L80.33 0.84 L83.73 0.84 L104.53 55.21 C105.33 57.29 106.45 59.26 107.85 61.06 L107.85 61.65 L99.04 61.65 L99.04 61.06 C100.17 59.34 97.40 49.28 96.68 47.38 L81.49 7.17 L63.69 55.45 C63.01 57.30 63.19 59.33 64.19 61.06 L64.18 61.65 L56.83 61.65 Z"/><path d="M188.04 61.65 L188.04 61.06 C189.25 59.27 190.24 57.36 190.99 55.36 L211.54 0.84 L214.94 0.84 L235.74 55.21 C236.54 57.29 237.66 59.26 239.06 61.06 L239.06 61.65 L230.25 61.65 L230.25 61.06 C231.38 59.34 228.61 49.28 227.90 47.38 L212.70 7.17 L194.90 55.45 C194.22 57.30 194.40 59.33 195.40 61.06 L195.39 61.65 L188.04 61.65 Z"/><path d="M133.04 29.94 L147.41 29.94 C150.62 29.94 153.41 29.42 155.76 28.38 C158.12 27.34 159.93 25.86 161.20 23.95 C162.48 22.04 163.11 19.71 163.11 16.95 C163.11 12.68 161.70 9.47 158.88 7.34 C156.05 5.20 152.23 4.13 147.41 4.13 L133.04 4.13 L133.04 29.94 Z M127.10 61.65 L127.10 61.06 L127.36 60.57 C128.14 59.09 128.55 57.47 128.55 55.82 L128.55 7.36 C128.55 5.28 127.97 3.24 126.87 1.43 L126.87 0.84 L147.41 0.84 C151.73 0.84 155.43 1.46 158.50 2.70 C161.58 3.94 163.92 5.75 165.52 8.14 C167.13 10.53 167.93 13.47 167.93 16.95 C167.93 19.82 167.32 22.35 166.11 24.54 C164.89 26.73 163.18 28.49 161.00 29.81 C158.81 31.13 156.16 31.99 153.06 32.38 C154.61 32.72 156.07 33.31 157.42 34.15 C158.78 35.00 160.03 36.21 161.16 37.78 C162.30 39.35 163.25 41.46 164.03 44.11 L166.70 52.92 C167.57 55.80 168.90 58.54 170.64 61.06 L170.64 61.65 L164.36 61.65 L159.87 45.62 C158.93 42.48 157.77 40.00 156.39 38.20 C155.00 36.40 153.28 35.12 151.23 34.36 C149.18 33.61 146.64 33.23 143.59 33.23 L133.04 33.23 L133.04 55.01 C133.04 57.17 133.74 59.28 135.06 61.06 L135.06 61.65 L127.10 61.65 Z"/><path d="M630.90 61.65 L630.90 61.06 C632.11 59.27 633.10 57.36 633.85 55.36 L654.40 0.84 L657.80 0.84 L678.60 55.21 C679.40 57.29 680.52 59.26 681.92 61.06 L681.92 61.65 L673.12 61.65 L673.11 61.06 C674.24 59.34 671.47 49.28 670.76 47.38 L655.56 7.17 L637.76 55.45 C637.08 57.30 637.26 59.33 638.26 61.06 L638.25 61.65 L630.90 61.65 Z"/><path d="M576.71 29.94 L591.08 29.94 C594.29 29.94 597.08 29.42 599.43 28.38 C601.78 27.34 603.60 25.86 604.87 23.95 C606.15 22.04 606.78 19.71 606.78 16.95 C606.78 12.68 605.37 9.47 602.55 7.34 C599.72 5.20 595.90 4.13 591.08 4.13 L576.71 4.13 L576.71 29.94 Z M570.77 61.65 L570.77 61.06 L571.03 60.57 C571.81 59.09 572.22 57.47 572.22 55.82 L572.22 7.36 C572.22 5.28 571.64 3.24 570.54 1.43 L570.54 0.84 L591.08 0.84 C595.40 0.84 599.10 1.46 602.17 2.70 C605.25 3.94 607.58 5.75 609.19 8.14 C610.80 10.53 611.60 13.47 611.60 16.95 C611.60 19.82 610.99 22.35 609.77 24.54 C608.55 26.73 606.85 28.49 604.67 29.81 C602.48 31.13 599.83 31.99 596.73 32.38 C598.28 32.72 599.73 33.31 601.09 34.15 C602.45 35.00 603.69 36.21 604.83 37.78 C605.96 39.35 606.92 41.46 607.70 44.11 L610.37 52.92 C611.24 55.80 612.57 58.54 614.30 61.06 L614.30 61.65 L608.03 61.65 L603.54 45.62 C602.60 42.48 601.44 40.00 600.05 38.20 C598.67 36.40 596.95 35.12 594.90 34.36 C592.85 33.61 590.30 33.23 587.26 33.23 L576.71 33.23 L576.71 55.01 C576.71 57.17 577.41 59.28 578.73 61.06 L578.73 61.65 L570.77 61.65 Z"/><path d="M305.90 62.49 C302.58 62.49 299.45 61.91 296.52 60.76 C293.58 59.61 291.07 58.01 289.00 55.95 C286.92 53.90 285.49 51.53 284.72 48.83 L288.04 44.36 L288.62 44.44 C289.12 47.37 290.19 49.94 291.82 52.16 C293.45 54.38 295.49 56.11 297.93 57.35 C300.36 58.58 303.02 59.20 305.90 59.20 C309.00 59.20 311.73 58.67 314.09 57.60 C316.44 56.53 318.27 55.01 319.57 53.04 C320.87 51.08 321.52 48.77 321.52 46.13 C321.52 42.64 320.57 39.85 318.66 37.74 C316.75 35.63 313.99 34.04 310.39 32.97 L300.67 30.02 C297.90 29.18 295.50 28.10 293.48 26.78 C291.46 25.46 289.88 23.84 288.75 21.93 C287.61 20.02 287.04 17.74 287.04 15.10 C287.04 12.79 287.50 10.71 288.42 8.86 C289.33 7.00 290.60 5.41 292.24 4.09 C293.87 2.77 295.81 1.76 298.05 1.05 C300.30 0.35 302.75 0.00 305.40 0.00 C308.45 0.00 311.26 0.46 313.84 1.39 C316.41 2.32 318.60 3.63 320.40 5.31 C322.20 7.00 323.46 8.94 324.18 11.13 L321.27 15.52 L320.69 15.52 C319.86 11.69 318.07 8.70 315.33 6.54 C312.59 4.37 309.28 3.29 305.40 3.29 C302.52 3.29 300.02 3.74 297.89 4.64 C295.75 5.54 294.09 6.83 292.90 8.52 C291.71 10.20 291.12 12.20 291.12 14.51 C291.12 17.43 292.04 19.75 293.90 21.46 C295.75 23.18 298.43 24.57 301.92 25.64 L311.72 28.67 C314.65 29.52 317.16 30.68 319.24 32.17 C321.31 33.66 322.92 35.50 324.06 37.70 C325.19 39.89 325.76 42.50 325.76 45.54 C325.76 48.07 325.29 50.36 324.35 52.41 C323.40 54.46 322.03 56.25 320.23 57.77 C318.43 59.28 316.32 60.45 313.88 61.27 C311.44 62.08 308.78 62.49 305.90 62.49 Z"/><path d="M352.71 60.69 L352.87 61.06 L352.87 61.65 L344.78 61.65 L344.78 61.06 C346.04 58.44 346.69 55.61 346.69 52.74 L346.69 9.75 C346.69 6.88 346.04 4.05 344.78 1.43 L344.78 0.84 L352.87 0.84 L352.87 1.43 L352.71 1.80 C351.70 4.18 351.18 6.71 351.18 9.27 L351.18 53.22 C351.18 55.78 351.70 58.31 352.71 60.69 Z"/><path d="M548.94 60.69 L549.10 61.06 L549.10 61.65 L541.01 61.65 L541.01 61.06 C542.27 58.44 542.92 55.61 542.92 52.74 L542.92 9.75 C542.92 6.88 542.27 4.05 541.01 1.43 L541.01 0.84 L549.10 0.84 L549.10 1.43 L548.94 1.80 C547.93 4.18 547.41 6.71 547.41 9.27 L547.41 53.22 C547.41 55.78 547.93 58.31 548.94 60.69 Z"/><path d="M373.50 61.65 L373.50 61.06 C374.76 58.44 375.41 55.61 375.41 52.74 L375.41 9.74 C375.41 6.88 374.76 4.05 373.50 1.43 L373.50 0.84 L381.36 0.84 L381.36 1.43 L381.07 2.20 C380.30 4.32 379.90 6.54 379.90 8.77 L379.90 58.61 L398.55 58.10 C402.42 57.99 406.24 57.23 409.83 55.85 L410.41 55.85 L409.56 61.65 L373.50 61.65 Z"/><path d="M437.48 61.65 L417.86 7.51 C417.10 5.40 416.10 3.36 414.90 1.43 L414.90 0.84 L422.32 0.84 L422.41 1.43 C421.78 3.21 421.79 5.12 422.42 6.89 L439.72 55.32 L453.95 17.85 C455.96 12.58 456.92 7.02 456.79 1.43 L456.88 0.84 L463.82 0.84 L463.82 1.43 C462.38 3.36 461.25 5.46 460.44 7.68 L440.80 61.65 L437.48 61.65 Z"/><path d="M520.60 56.07 C516.86 57.30 512.93 57.99 508.96 58.09 L488.78 58.61 L488.78 32.24 L507.00 32.59 C508.53 32.62 510.05 32.69 511.46 33.25 L512.04 33.25 L512.04 29.19 L511.46 29.19 C510.05 29.70 508.55 29.79 507.03 29.81 L488.78 30.09 L488.78 3.88 L508.13 4.39 C512.10 4.50 516.03 5.19 519.77 6.42 L520.35 6.42 L519.42 0.84 L483.07 0.84 L483.07 1.43 C483.88 3.21 484.30 5.11 484.30 7.04 L484.30 55.36 C484.30 57.34 483.80 59.29 482.84 61.06 L482.84 61.65 L520.33 61.65 L521.18 56.07 L520.60 56.07 Z"/></svg></a>
-    <nav class="links" aria-label="Principal"><a href="head.html#colecao">Coleção</a><a href="head.html#imoveis">Imóveis</a><a href="head.html#sara">A Sara</a></nav>
-    <a class="b2 fala" href="#" aria-label="Falar com a Sara"><span class="rosto" aria-hidden="true"><svg viewBox="0 0 150 210"><path d="M109.25 116.02 C102.84 111.21 94.94 107.33 85.77 104.48 L53.91 93.85 C42.26 90.01 33.21 85.03 27.01 79.03 C19.51 71.78 16.05 61.21 17.52 50.02 C18.73 40.79 23.40 29.05 30.01 18.54 L28.50 16.92 C20.09 25.50 10.01 39.21 9.65 55.87 C9.48 63.98 11.07 71.06 14.38 76.92 C17.73 82.86 22.54 87.99 28.67 92.19 C34.93 96.48 42.52 100.10 51.23 102.96 L82.76 113.29 C94.85 117.17 104.22 122.87 110.61 130.23 C118.33 139.12 121.42 150.75 119.30 162.97 C116.70 178.04 106.58 192.20 92.91 199.91 C85.96 203.83 79.26 206.11 72.42 206.88 C64.74 207.75 57.91 207.04 50.29 204.58 C48.56 204.02 46.54 203.32 44.63 202.39 C38.15 199.22 32.26 195.10 27.12 190.14 C26.86 189.89 26.61 189.64 26.36 189.39 C17.41 180.46 11.12 169.24 8.18 156.94 L7.95 155.99 L0.93 165.11 C0.60 165.54 0.18 166.07 0.09 166.74 C0.00 167.35 0.19 167.91 0.40 168.47 C9.32 191.83 31.26 201.19 31.26 201.19 C33.09 202.11 41.51 206.25 53.43 208.38 C59.75 209.51 64.64 209.63 65.86 209.66 C82.90 210.00 95.23 204.42 98.43 202.89 C101.94 201.22 106.06 199.08 110.61 195.41 C128.12 181.30 133.91 154.07 123.79 133.43 C120.44 126.61 115.55 120.75 109.25 116.02 Z"/><path d="M149.20 137.67 C148.44 128.73 145.63 120.13 141.07 112.81 C136.64 105.70 130.45 99.86 122.15 94.96 C112.79 89.44 102.19 86.37 91.93 83.40 C82.29 80.61 72.32 77.73 63.41 72.81 C49.05 64.87 35.83 49.95 41.81 31.88 C46.59 17.41 58.86 7.71 69.47 4.42 C71.58 3.77 78.44 1.84 87.17 3.01 C108.17 5.82 123.05 24.28 128.80 39.33 C129.00 39.87 129.20 40.41 129.39 40.96 L129.70 41.83 L134.54 34.72 C135.00 34.05 135.58 33.20 135.68 32.23 C135.82 30.89 135.07 29.71 134.46 28.76 C124.72 13.48 106.76 2.83 87.60 0.96 C83.63 0.57 76.45 0.00 67.58 2.38 C63.53 3.46 52.93 6.45 44.13 16.06 C42.32 18.02 38.85 21.88 36.34 28.00 C33.51 34.91 32.74 42.62 34.26 50.39 C36.46 61.65 43.18 71.28 52.69 76.82 C63.98 83.39 76.62 87.46 88.85 91.40 C91.27 92.18 93.68 92.96 96.08 93.75 C109.85 98.32 128.12 107.13 136.94 123.20 C140.18 129.11 141.89 136.29 142.15 145.14 C142.44 154.68 141.36 164.00 139.03 172.10 C138.93 172.46 138.81 172.82 138.70 173.17 L140.94 174.10 C143.49 169.70 145.51 165.02 146.93 160.15 C149.08 152.77 149.84 145.21 149.20 137.67 Z"/></svg></span><span class="rotulo">Falar com a Sara</span></a>
+    <nav class="links" aria-label="Principal"><a href="head.html#colecao">Coleção</a><a href="head.html#imoveis">Imóveis</a><a href="indicacoes.html">Indicações</a><a href="head.html#sara">A Sara</a></nav>
+    <a class="b2 fala" href="#" aria-label="Falar com a Sara"><span class="wpp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg></span><span class="rotulo">Falar com a Sara</span></a>
     <button class="menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mn"></button>
   </div>
   <div class="mn" id="mn" role="dialog" aria-modal="false" aria-label="Menu" hidden>
     <button class="mn-x" type="button" aria-label="Fechar menu"></button>
-    <nav class="mn-links" aria-label="Menu"><a href="head.html#colecao">Coleção</a><a href="head.html#imoveis">Imóveis</a><a href="head.html#sara">A Sara</a></nav>
-    <div class="mn-contato"><a class="b2" href="#"><span class="rosto" aria-hidden="true"><svg viewBox="0 0 150 210"><path d="M109.25 116.02 C102.84 111.21 94.94 107.33 85.77 104.48 L53.91 93.85 C42.26 90.01 33.21 85.03 27.01 79.03 C19.51 71.78 16.05 61.21 17.52 50.02 C18.73 40.79 23.40 29.05 30.01 18.54 L28.50 16.92 C20.09 25.50 10.01 39.21 9.65 55.87 C9.48 63.98 11.07 71.06 14.38 76.92 C17.73 82.86 22.54 87.99 28.67 92.19 C34.93 96.48 42.52 100.10 51.23 102.96 L82.76 113.29 C94.85 117.17 104.22 122.87 110.61 130.23 C118.33 139.12 121.42 150.75 119.30 162.97 C116.70 178.04 106.58 192.20 92.91 199.91 C85.96 203.83 79.26 206.11 72.42 206.88 C64.74 207.75 57.91 207.04 50.29 204.58 C48.56 204.02 46.54 203.32 44.63 202.39 C38.15 199.22 32.26 195.10 27.12 190.14 C26.86 189.89 26.61 189.64 26.36 189.39 C17.41 180.46 11.12 169.24 8.18 156.94 L7.95 155.99 L0.93 165.11 C0.60 165.54 0.18 166.07 0.09 166.74 C0.00 167.35 0.19 167.91 0.40 168.47 C9.32 191.83 31.26 201.19 31.26 201.19 C33.09 202.11 41.51 206.25 53.43 208.38 C59.75 209.51 64.64 209.63 65.86 209.66 C82.90 210.00 95.23 204.42 98.43 202.89 C101.94 201.22 106.06 199.08 110.61 195.41 C128.12 181.30 133.91 154.07 123.79 133.43 C120.44 126.61 115.55 120.75 109.25 116.02 Z"/><path d="M149.20 137.67 C148.44 128.73 145.63 120.13 141.07 112.81 C136.64 105.70 130.45 99.86 122.15 94.96 C112.79 89.44 102.19 86.37 91.93 83.40 C82.29 80.61 72.32 77.73 63.41 72.81 C49.05 64.87 35.83 49.95 41.81 31.88 C46.59 17.41 58.86 7.71 69.47 4.42 C71.58 3.77 78.44 1.84 87.17 3.01 C108.17 5.82 123.05 24.28 128.80 39.33 C129.00 39.87 129.20 40.41 129.39 40.96 L129.70 41.83 L134.54 34.72 C135.00 34.05 135.58 33.20 135.68 32.23 C135.82 30.89 135.07 29.71 134.46 28.76 C124.72 13.48 106.76 2.83 87.60 0.96 C83.63 0.57 76.45 0.00 67.58 2.38 C63.53 3.46 52.93 6.45 44.13 16.06 C42.32 18.02 38.85 21.88 36.34 28.00 C33.51 34.91 32.74 42.62 34.26 50.39 C36.46 61.65 43.18 71.28 52.69 76.82 C63.98 83.39 76.62 87.46 88.85 91.40 C91.27 92.18 93.68 92.96 96.08 93.75 C109.85 98.32 128.12 107.13 136.94 123.20 C140.18 129.11 141.89 136.29 142.15 145.14 C142.44 154.68 141.36 164.00 139.03 172.10 C138.93 172.46 138.81 172.82 138.70 173.17 L140.94 174.10 C143.49 169.70 145.51 165.02 146.93 160.15 C149.08 152.77 149.84 145.21 149.20 137.67 Z"/></svg></span>Falar com a Sara</a><a class="mn-ig" href="https://www.instagram.com/sarasilveiracollection/">@sarasilveiracollection</a><p>Divinópolis · Nova Serrana (MG)</p></div>
+    <nav class="mn-links" aria-label="Menu"><a href="head.html#colecao">Coleção</a><a href="head.html#imoveis">Imóveis</a><a href="indicacoes.html">Indicações</a><a href="head.html#sara">A Sara</a></nav>
+    <div class="mn-contato"><a class="b2" href="#"><span class="wpp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg></span>Falar com a Sara</a><a class="mn-ig" href="https://www.instagram.com/sarasilveiracollection/">@sarasilveiracollection</a><p>Divinópolis · Nova Serrana (MG)</p></div>
   </div>
 </header>
 <div class="topo-vao" aria-hidden="true"></div>
@@ -454,7 +478,7 @@ if (!window.__abre && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   <h1>Residência Oliva</h1><p class="apoio im-sub">Casa de alto padrão à venda em <span class="nome">Divinópolis</span> (MG)</p></div>
   <div class="im-v v capa"><video muted loop playsinline autoplay preload="metadata" poster="video/fachada-capa.jpg" aria-hidden="true"><source src="video/fachada.mp4" type="video/mp4"></video></div>
   <div class="faixa"><dl class="im-ficha"><div><dt>Preço</dt><dd class="preco">R$ 3.250.000</dd></div><div><dt>Localização</dt><dd>Bairro exemplo 1, Divinópolis (MG)</dd></div>
-<div><dt>Área construída</dt><dd>480 m²</dd></div><div><dt>Terreno</dt><dd>1.200 m²</dd></div><div><dt>Suítes</dt><dd>4</dd></div><div><dt>Vagas</dt><dd>4</dd></div></dl><div class="acoes im-acoes"><a class="b1" href="#">Agendar visita</a><a class="b2" href="#"><span class="rosto" aria-hidden="true"><svg viewBox="0 0 150 210"><path d="M109.25 116.02 C102.84 111.21 94.94 107.33 85.77 104.48 L53.91 93.85 C42.26 90.01 33.21 85.03 27.01 79.03 C19.51 71.78 16.05 61.21 17.52 50.02 C18.73 40.79 23.40 29.05 30.01 18.54 L28.50 16.92 C20.09 25.50 10.01 39.21 9.65 55.87 C9.48 63.98 11.07 71.06 14.38 76.92 C17.73 82.86 22.54 87.99 28.67 92.19 C34.93 96.48 42.52 100.10 51.23 102.96 L82.76 113.29 C94.85 117.17 104.22 122.87 110.61 130.23 C118.33 139.12 121.42 150.75 119.30 162.97 C116.70 178.04 106.58 192.20 92.91 199.91 C85.96 203.83 79.26 206.11 72.42 206.88 C64.74 207.75 57.91 207.04 50.29 204.58 C48.56 204.02 46.54 203.32 44.63 202.39 C38.15 199.22 32.26 195.10 27.12 190.14 C26.86 189.89 26.61 189.64 26.36 189.39 C17.41 180.46 11.12 169.24 8.18 156.94 L7.95 155.99 L0.93 165.11 C0.60 165.54 0.18 166.07 0.09 166.74 C0.00 167.35 0.19 167.91 0.40 168.47 C9.32 191.83 31.26 201.19 31.26 201.19 C33.09 202.11 41.51 206.25 53.43 208.38 C59.75 209.51 64.64 209.63 65.86 209.66 C82.90 210.00 95.23 204.42 98.43 202.89 C101.94 201.22 106.06 199.08 110.61 195.41 C128.12 181.30 133.91 154.07 123.79 133.43 C120.44 126.61 115.55 120.75 109.25 116.02 Z"/><path d="M149.20 137.67 C148.44 128.73 145.63 120.13 141.07 112.81 C136.64 105.70 130.45 99.86 122.15 94.96 C112.79 89.44 102.19 86.37 91.93 83.40 C82.29 80.61 72.32 77.73 63.41 72.81 C49.05 64.87 35.83 49.95 41.81 31.88 C46.59 17.41 58.86 7.71 69.47 4.42 C71.58 3.77 78.44 1.84 87.17 3.01 C108.17 5.82 123.05 24.28 128.80 39.33 C129.00 39.87 129.20 40.41 129.39 40.96 L129.70 41.83 L134.54 34.72 C135.00 34.05 135.58 33.20 135.68 32.23 C135.82 30.89 135.07 29.71 134.46 28.76 C124.72 13.48 106.76 2.83 87.60 0.96 C83.63 0.57 76.45 0.00 67.58 2.38 C63.53 3.46 52.93 6.45 44.13 16.06 C42.32 18.02 38.85 21.88 36.34 28.00 C33.51 34.91 32.74 42.62 34.26 50.39 C36.46 61.65 43.18 71.28 52.69 76.82 C63.98 83.39 76.62 87.46 88.85 91.40 C91.27 92.18 93.68 92.96 96.08 93.75 C109.85 98.32 128.12 107.13 136.94 123.20 C140.18 129.11 141.89 136.29 142.15 145.14 C142.44 154.68 141.36 164.00 139.03 172.10 C138.93 172.46 138.81 172.82 138.70 173.17 L140.94 174.10 C143.49 169.70 145.51 165.02 146.93 160.15 C149.08 152.77 149.84 145.21 149.20 137.67 Z"/></svg></span>Falar com a Sara</a></div></div>
+<div><dt>Área construída</dt><dd>480 m²</dd></div><div><dt>Terreno</dt><dd>1.200 m²</dd></div><div><dt>Suítes</dt><dd>4</dd></div><div><dt>Vagas</dt><dd>4</dd></div></dl><div class="acoes im-acoes"><a class="b1" href="#">Agendar visita</a><a class="b2" href="#"><span class="wpp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg></span>Falar com a Sara</a></div></div>
   <div class="intro"><p class="apoio">A <span class="nome">Residência Oliva</span> é uma casa térrea em concreto aparente e madeira, com a sala aberta para a piscina de borda infinita e a vista dos morros. A oliveira centenária do jardim marca a entrada.</p>
   <p class="apoio">São quatro suítes, a principal com closet e banheira voltada para o jardim. A cozinha gourmet integra a área de lazer, e a iluminação foi pensada para o fim de tarde.</p></div>
   <h2 class="ambs-tit">Os ambientes</h2>
@@ -463,20 +487,77 @@ if (!window.__abre && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   <section class="amb" aria-label="A piscina"><div class="im-v v "><video muted loop playsinline autoplay preload="metadata" poster="video/detalhe-capa.jpg" aria-hidden="true"><source src="video/detalhe.mp4" type="video/mp4"></video></div><div><h3>A piscina</h3><p class="apoio"><span class="nome">Borda infinita</span> alinhada ao horizonte, com deque em madeira e iluminação embutida.</p></div></section>
   <section class="amb" aria-label="Ao anoitecer"><div class="im-v v "><video muted loop playsinline autoplay preload="metadata" poster="video/anoitecer-capa.jpg" aria-hidden="true"><source src="video/anoitecer.mp4" type="video/mp4"></video></div><div><h3>Ao anoitecer</h3><p class="apoio">A casa <span class="nome">acende por camadas</span>: spots no forro, luz rasante nas paredes e a piscina iluminada.</p></div></section>
   </div>
-  <div class="fim"><p class="apoio">Quer conhecer a <span class="nome">Residência Oliva</span> pessoalmente?</p><div class="acoes im-acoes"><a class="b1" href="#">Agendar visita</a><a class="b2" href="#"><span class="rosto" aria-hidden="true"><svg viewBox="0 0 150 210"><path d="M109.25 116.02 C102.84 111.21 94.94 107.33 85.77 104.48 L53.91 93.85 C42.26 90.01 33.21 85.03 27.01 79.03 C19.51 71.78 16.05 61.21 17.52 50.02 C18.73 40.79 23.40 29.05 30.01 18.54 L28.50 16.92 C20.09 25.50 10.01 39.21 9.65 55.87 C9.48 63.98 11.07 71.06 14.38 76.92 C17.73 82.86 22.54 87.99 28.67 92.19 C34.93 96.48 42.52 100.10 51.23 102.96 L82.76 113.29 C94.85 117.17 104.22 122.87 110.61 130.23 C118.33 139.12 121.42 150.75 119.30 162.97 C116.70 178.04 106.58 192.20 92.91 199.91 C85.96 203.83 79.26 206.11 72.42 206.88 C64.74 207.75 57.91 207.04 50.29 204.58 C48.56 204.02 46.54 203.32 44.63 202.39 C38.15 199.22 32.26 195.10 27.12 190.14 C26.86 189.89 26.61 189.64 26.36 189.39 C17.41 180.46 11.12 169.24 8.18 156.94 L7.95 155.99 L0.93 165.11 C0.60 165.54 0.18 166.07 0.09 166.74 C0.00 167.35 0.19 167.91 0.40 168.47 C9.32 191.83 31.26 201.19 31.26 201.19 C33.09 202.11 41.51 206.25 53.43 208.38 C59.75 209.51 64.64 209.63 65.86 209.66 C82.90 210.00 95.23 204.42 98.43 202.89 C101.94 201.22 106.06 199.08 110.61 195.41 C128.12 181.30 133.91 154.07 123.79 133.43 C120.44 126.61 115.55 120.75 109.25 116.02 Z"/><path d="M149.20 137.67 C148.44 128.73 145.63 120.13 141.07 112.81 C136.64 105.70 130.45 99.86 122.15 94.96 C112.79 89.44 102.19 86.37 91.93 83.40 C82.29 80.61 72.32 77.73 63.41 72.81 C49.05 64.87 35.83 49.95 41.81 31.88 C46.59 17.41 58.86 7.71 69.47 4.42 C71.58 3.77 78.44 1.84 87.17 3.01 C108.17 5.82 123.05 24.28 128.80 39.33 C129.00 39.87 129.20 40.41 129.39 40.96 L129.70 41.83 L134.54 34.72 C135.00 34.05 135.58 33.20 135.68 32.23 C135.82 30.89 135.07 29.71 134.46 28.76 C124.72 13.48 106.76 2.83 87.60 0.96 C83.63 0.57 76.45 0.00 67.58 2.38 C63.53 3.46 52.93 6.45 44.13 16.06 C42.32 18.02 38.85 21.88 36.34 28.00 C33.51 34.91 32.74 42.62 34.26 50.39 C36.46 61.65 43.18 71.28 52.69 76.82 C63.98 83.39 76.62 87.46 88.85 91.40 C91.27 92.18 93.68 92.96 96.08 93.75 C109.85 98.32 128.12 107.13 136.94 123.20 C140.18 129.11 141.89 136.29 142.15 145.14 C142.44 154.68 141.36 164.00 139.03 172.10 C138.93 172.46 138.81 172.82 138.70 173.17 L140.94 174.10 C143.49 169.70 145.51 165.02 146.93 160.15 C149.08 152.77 149.84 145.21 149.20 137.67 Z"/></svg></span>Falar com a Sara</a></div></div>
+  <div class="fim"><p class="apoio">Quer conhecer a <span class="nome">Residência Oliva</span> pessoalmente?</p><div class="acoes im-acoes"><a class="b1" href="#">Agendar visita</a><a class="b2" href="#"><span class="wpp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg></span>Falar com a Sara</a></div></div>
 </main>
-<section class="im-outros" aria-label="Outros imóveis da coleção"><h2>Outros imóveis da coleção</h2><div class="grade"><article class="imovel" data-tipo="casa" data-cidade="Nova Serrana" data-preco="2900000" data-suites="3" data-bairro="Bairro exemplo 4">
-      <div class="midia v"><video muted loop playsinline autoplay preload="metadata" poster="video/sala-capa.jpg" aria-hidden="true"><source src="video/sala.mp4" type="video/mp4"></video></div>
-      <div class="ficha"><div class="ficha-topo"><h3>Casa Travertino</h3><a class="ver" href="imovel.html">Ver imóvel</a></div><dl><div><dt>Preço</dt><dd class="preco">R$ 2.900.000</dd></div><div><dt>Localização</dt><dd>Nova Serrana (MG)</dd></div><div><dt>Área</dt><dd>410 m²</dd></div></dl></div>
-    </article><article class="imovel" data-tipo="cobertura" data-cidade="Divinópolis" data-preco="2400000" data-suites="3" data-bairro="Bairro exemplo 2">
-      <div class="midia v"><video muted loop playsinline autoplay preload="metadata" poster="video/anoitecer-capa.jpg" aria-hidden="true"><source src="video/anoitecer.mp4" type="video/mp4"></video></div>
-      <div class="ficha"><div class="ficha-topo"><h3>Cobertura Horizonte</h3><a class="ver" href="imovel.html">Ver imóvel</a></div><dl><div><dt>Preço</dt><dd class="preco">R$ 2.400.000</dd></div><div><dt>Localização</dt><dd>Divinópolis (MG)</dd></div><div><dt>Área</dt><dd>290 m²</dd></div></dl></div>
-    </article><article class="imovel" data-tipo="casa" data-cidade="Divinópolis" data-preco="3900000" data-suites="5" data-bairro="Bairro exemplo 1">
-      <div class="midia v"><video muted loop playsinline autoplay preload="metadata" poster="video/detalhe-capa.jpg" aria-hidden="true"><source src="video/detalhe.mp4" type="video/mp4"></video></div>
-      <div class="ficha"><div class="ficha-topo"><h3>Casa das Águas</h3><a class="ver" href="imovel.html">Ver imóvel</a></div><dl><div><dt>Preço</dt><dd class="preco">R$ 3.900.000</dd></div><div><dt>Localização</dt><dd>Divinópolis (MG)</dd></div><div><dt>Área</dt><dd>540 m²</dd></div></dl></div>
+<section class="im-outros" aria-label="Outros imóveis da coleção"><h2>Outros imóveis da coleção</h2><div class="grade"><article class="imovel" data-tipo="cobertura" data-cidade="Divinópolis" data-preco="1750000" data-suites="2" data-bairro="Sidil">
+      <div class="midia v"><video muted loop playsinline autoplay preload="metadata" poster="video/piaui/convivio-sala-capa.jpg" aria-hidden="true"><source src="video/piaui/convivio-sala.mp4" type="video/mp4"></video></div>
+      <div class="ficha"><div class="ficha-topo"><h3>Cobertura duplex de 389&nbsp;m²</h3><a class="ver" href="imovel-piaui.html">Ver imóvel</a></div><dl><div><dt>Preço</dt><dd class="preco">R$ 1.750.000</dd></div><div><dt>Localização</dt><dd>Sidil, Divinópolis (MG)</dd></div><div><dt>Área</dt><dd>389 m²</dd></div></dl></div>
+    </article><article class="imovel" data-tipo="cobertura" data-cidade="Divinópolis" data-preco="1990000" data-suites="2" data-bairro="Vila Cruzeiro">
+      <div class="midia v"><video muted loop playsinline autoplay preload="metadata" poster="video/cobertura-1302/cartao-capa.jpg" aria-hidden="true"><source src="video/cobertura-1302/cartao.mp4" type="video/mp4"></video></div>
+      <div class="ficha"><div class="ficha-topo"><h3>Cobertura duplex de 242&nbsp;m²</h3><a class="ver" href="imovel-cobertura-vila-cruzeiro.html">Ver imóvel</a></div><dl><div><dt>Preço</dt><dd class="preco">R$ 1.990.000</dd></div><div><dt>Localização</dt><dd>Vila Cruzeiro, Divinópolis (MG)</dd></div><div><dt>Área</dt><dd>242 m²</dd></div></dl></div>
+    </article><article class="imovel" data-tipo="apartamento" data-cidade="Divinópolis" data-preco="1100000" data-suites="2" data-bairro="Centro">
+      <div class="midia v"><video muted loop playsinline autoplay preload="metadata" poster="video/lumini/cartao-capa.jpg" aria-hidden="true"><source src="video/lumini/cartao.mp4" type="video/mp4"></video></div>
+      <div class="ficha"><div class="ficha-topo"><h3>Apartamento de 254&nbsp;m²</h3><a class="ver" href="imovel-apartamento-divinopolis.html">Ver imóvel</a></div><dl><div><dt>Preço</dt><dd class="preco">R$ 1.100.000</dd></div><div><dt>Localização</dt><dd>Centro, Divinópolis (MG)</dd></div><div><dt>Área</dt><dd>254 m²</dd></div></dl></div>
     </article></div></section>
-<footer class="rodape"><span>Sara Silveira Collection</span><span>Divinópolis · Nova Serrana (MG)</span><span>© 2026</span></footer>
-<div class="im-barra fora"><a class="b1" href="#">Agendar visita</a><a class="b2" href="#"><span class="rosto" aria-hidden="true"><svg viewBox="0 0 150 210"><path d="M109.25 116.02 C102.84 111.21 94.94 107.33 85.77 104.48 L53.91 93.85 C42.26 90.01 33.21 85.03 27.01 79.03 C19.51 71.78 16.05 61.21 17.52 50.02 C18.73 40.79 23.40 29.05 30.01 18.54 L28.50 16.92 C20.09 25.50 10.01 39.21 9.65 55.87 C9.48 63.98 11.07 71.06 14.38 76.92 C17.73 82.86 22.54 87.99 28.67 92.19 C34.93 96.48 42.52 100.10 51.23 102.96 L82.76 113.29 C94.85 117.17 104.22 122.87 110.61 130.23 C118.33 139.12 121.42 150.75 119.30 162.97 C116.70 178.04 106.58 192.20 92.91 199.91 C85.96 203.83 79.26 206.11 72.42 206.88 C64.74 207.75 57.91 207.04 50.29 204.58 C48.56 204.02 46.54 203.32 44.63 202.39 C38.15 199.22 32.26 195.10 27.12 190.14 C26.86 189.89 26.61 189.64 26.36 189.39 C17.41 180.46 11.12 169.24 8.18 156.94 L7.95 155.99 L0.93 165.11 C0.60 165.54 0.18 166.07 0.09 166.74 C0.00 167.35 0.19 167.91 0.40 168.47 C9.32 191.83 31.26 201.19 31.26 201.19 C33.09 202.11 41.51 206.25 53.43 208.38 C59.75 209.51 64.64 209.63 65.86 209.66 C82.90 210.00 95.23 204.42 98.43 202.89 C101.94 201.22 106.06 199.08 110.61 195.41 C128.12 181.30 133.91 154.07 123.79 133.43 C120.44 126.61 115.55 120.75 109.25 116.02 Z"/><path d="M149.20 137.67 C148.44 128.73 145.63 120.13 141.07 112.81 C136.64 105.70 130.45 99.86 122.15 94.96 C112.79 89.44 102.19 86.37 91.93 83.40 C82.29 80.61 72.32 77.73 63.41 72.81 C49.05 64.87 35.83 49.95 41.81 31.88 C46.59 17.41 58.86 7.71 69.47 4.42 C71.58 3.77 78.44 1.84 87.17 3.01 C108.17 5.82 123.05 24.28 128.80 39.33 C129.00 39.87 129.20 40.41 129.39 40.96 L129.70 41.83 L134.54 34.72 C135.00 34.05 135.58 33.20 135.68 32.23 C135.82 30.89 135.07 29.71 134.46 28.76 C124.72 13.48 106.76 2.83 87.60 0.96 C83.63 0.57 76.45 0.00 67.58 2.38 C63.53 3.46 52.93 6.45 44.13 16.06 C42.32 18.02 38.85 21.88 36.34 28.00 C33.51 34.91 32.74 42.62 34.26 50.39 C36.46 61.65 43.18 71.28 52.69 76.82 C63.98 83.39 76.62 87.46 88.85 91.40 C91.27 92.18 93.68 92.96 96.08 93.75 C109.85 98.32 128.12 107.13 136.94 123.20 C140.18 129.11 141.89 136.29 142.15 145.14 C142.44 154.68 141.36 164.00 139.03 172.10 C138.93 172.46 138.81 172.82 138.70 173.17 L140.94 174.10 C143.49 169.70 145.51 165.02 146.93 160.15 C149.08 152.77 149.84 145.21 149.20 137.67 Z"/></svg></span>Sara</a></div>
+<footer class="rodape"><span>Sara Silveira Collection</span><span>Divinópolis · Nova Serrana (MG)</span><span>CRECI 64.725</span><span>© 2026</span></footer>
+<!--sigilo-->
+<!-- Imóveis sob sigilo (off market), aprovado em 11/11/2026: pílula clara com miniatura em arco + cartão. Vai na página principal e nas páginas de imóvel; o blog não leva. Os montadores das páginas de imóvel copiam o bloco entre os marcadores; montar-indicacoes.py não. -->
+<style>
+@keyframes sgTroca{0%{opacity:0;transform:scale(1.18)}6%{opacity:1}25%{opacity:1}31%{opacity:0;transform:scale(1.02)}100%{opacity:0}}
+@keyframes sgBrilho{0%{transform:translateX(-120%) skewX(-18deg)}55%,100%{transform:translateX(320%) skewX(-18deg)}}
+@keyframes sgSobe{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes sgRola{0%,42%{transform:translateY(0)}50%,92%{transform:translateY(-50%)}100%{transform:translateY(0)}}
+.sg-veu{position:absolute;inset:0;overflow:hidden}
+.sg-veu i{position:absolute;inset:-12%;background-size:cover;background-position:center;filter:blur(14px) saturate(.85);opacity:0;animation:sgTroca 6.4s linear infinite}
+.sg-p{position:fixed;z-index:40;right:22px;bottom:22px;display:flex;align-items:center;gap:12px;border:0;cursor:pointer;color:var(--petroleo);background:rgba(243,245,246,.86);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);border-radius:999px;padding:5px 22px 5px 12px;box-shadow:inset 0 0 0 1px rgba(2,53,68,.3),0 10px 30px rgba(2,53,68,.10);transform:translateY(140%);opacity:0;pointer-events:none;transition:transform .9s cubic-bezier(.2,.9,.2,1),opacity .6s,bottom .5s cubic-bezier(.65,0,.2,1)}
+.sg-p.vis{transform:none;opacity:1;pointer-events:auto}
+.sg-p:focus-visible{outline:2px solid var(--terracota);outline-offset:3px}
+.sg-p .sg-mini{position:relative;width:30px;height:40px;border-radius:999px 999px 5px 5px;overflow:hidden;flex:none;background:#cbd2d7}
+.sg-p .sg-mini .sg-veu i{filter:blur(3px)}
+.sg-p .sg-rolo{height:22px;overflow:hidden;text-align:left}
+.sg-p .sg-rolo>span{display:block;animation:sgRola 5s cubic-bezier(.7,0,.3,1) infinite}
+.sg-p .sg-rolo b{display:block;height:22px;font:300 14px/22px var(--texto);letter-spacing:.04em}
+.sg-p .sg-rolo b:first-child{font:400 17px/22px var(--serifa);letter-spacing:.01em}
+.sg-fundo{position:fixed;inset:0;z-index:58;background:rgba(243,245,246,.45);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .5s}
+.sg-card{position:fixed;z-index:59;right:24px;bottom:24px;width:340px;border-radius:26px;overflow:hidden;background:var(--off);color:var(--petroleo);padding:10px 10px 26px;box-shadow:inset 0 0 0 1px rgba(2,53,68,.12),0 24px 60px rgba(2,53,68,.14)}
+.sg-card[hidden]{display:none}
+.sg-aberto .sg-fundo{opacity:1;pointer-events:auto}
+.sg-aberto .sg-card{animation:sgSobe .7s cubic-bezier(.2,.9,.2,1) both}
+.sg-aberto .sg-p{opacity:0;pointer-events:none}
+.sg-foto{position:relative;height:200px;border-radius:18px;overflow:hidden;background:#cbd2d7}
+.sg-brilho{position:absolute;top:0;bottom:0;width:30%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);animation:sgBrilho 3.2s ease-in-out infinite}
+.sg-c-txt{padding:22px 18px 0}
+.sg-c-txt h3{font:400 30px/1.05 var(--serifa);margin:0 0 8px}
+.sg-c-txt p{font:300 15px/1.5 var(--texto);margin:0 0 20px;opacity:.8}
+.sg-bt{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--petroleo);font:300 14px var(--texto);letter-spacing:.04em;padding:12px 20px 12px 16px;border-radius:14px;box-shadow:inset 0 0 0 1px rgba(2,53,68,.3)}
+.sg-bt .wpp svg{width:19px;height:19px;stroke-width:1.15;display:block}
+.sg-x{position:absolute;right:18px;top:16px;z-index:2;width:34px;height:34px;border-radius:50%;border:0;background:rgba(243,245,246,.85);color:var(--petroleo);font:300 22px/34px var(--texto);cursor:pointer;padding:0}
+@media (max-width:899px){.sg-p{right:12px;bottom:12px}.sg-barra .sg-p{bottom:84px}.sg-card{left:10px;right:10px;bottom:10px;width:auto}}
+@media (prefers-reduced-motion:reduce){.sg-veu i{animation:none}.sg-veu i:first-child{opacity:1}.sg-p .sg-rolo>span,.sg-brilho{animation:none}}
+</style>
+<button class="sg-p" type="button" aria-haspopup="dialog" aria-controls="sigilo" aria-label="Imóveis sob sigilo: consultar"><span class="sg-mini" aria-hidden="true"><span class="sg-veu"><i style="background-image:url(img/infinity/010.webp)"></i><i style="background-image:url(img/cobertura-1302/005.webp);animation-delay:1.6s"></i><i style="background-image:url(img/ap-204/007.webp);animation-delay:3.2s"></i><i style="background-image:url(img/infinity/001.webp);animation-delay:4.8s"></i></span></span><span class="sg-rolo" aria-hidden="true"><span><b>Imóveis sob sigilo</b><b>Consultar</b></span></span></button>
+<div class="sg-fundo" aria-hidden="true"></div>
+<div class="sg-card" id="sigilo" role="dialog" aria-modal="true" aria-labelledby="sigilo-tit" hidden><div class="sg-foto" aria-hidden="true"><span class="sg-veu"><i style="background-image:url(img/infinity/010.webp)"></i><i style="background-image:url(img/cobertura-1302/005.webp);animation-delay:1.6s"></i><i style="background-image:url(img/ap-204/007.webp);animation-delay:3.2s"></i><i style="background-image:url(img/infinity/001.webp);animation-delay:4.8s"></i></span><span class="sg-brilho"></span></div><button class="sg-x" type="button" aria-label="Fechar">×</button><div class="sg-c-txt"><h3 id="sigilo-tit">Imóveis sob sigilo</h3><p>Negociados com discrição, a pedido dos proprietários.</p><a class="sg-bt" href="#"><span class="wpp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg></span><span>Consultar</span></a></div></div>
+<script>
+// imóveis sob sigilo (11/11): a pílula aparece depois da primeira tela; no celular sobe acima da barra "Agendar visita"; abre e fecha o cartão
+(() => {
+  const p = document.querySelector('.sg-p'), card = document.getElementById('sigilo'), fundo = document.querySelector('.sg-fundo'), x = card.querySelector('.sg-x');
+  let ib = null;   // a barra "Agendar visita" vem depois deste bloco nas páginas de imóvel: procurar quando a página termina de carregar
+  const olha = () => {
+    p.classList.toggle('vis', scrollY > innerHeight * 0.6);
+    document.body.classList.toggle('sg-barra', !!ib && getComputedStyle(ib).display !== 'none' && !ib.classList.contains('fora'));
+  };
+  addEventListener('scroll', olha, { passive: true }); addEventListener('resize', olha);
+  const liga = () => { ib = document.querySelector('.im-barra'); if (ib) new MutationObserver(olha).observe(ib, { attributes: true, attributeFilter: ['class'] }); olha(); };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', liga); else liga();
+  const abre = () => { card.hidden = false; document.body.classList.add('sg-aberto'); p.setAttribute('aria-expanded', 'true'); x.focus({ preventScroll: true }); };
+  const fecha = () => { document.body.classList.remove('sg-aberto'); card.hidden = true; p.setAttribute('aria-expanded', 'false'); p.focus({ preventScroll: true }); };
+  p.addEventListener('click', abre); x.addEventListener('click', fecha); fundo.addEventListener('click', fecha);
+  addEventListener('keydown', e => { if (e.key === 'Escape' && !card.hidden) fecha(); });
+})();
+</script>
+<!--/sigilo-->
+<div class="im-barra fora"><a class="b1" href="#">Agendar visita</a><a class="b2" href="#"><span class="wpp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg></span>Sara</a></div>
 <div id="abertura" aria-hidden="true"><div class="fundo" id="fundoAb"></div><canvas id="folhas3d"></canvas>
   <svg id="vet"><defs><mask id="tinta" maskUnits="userSpaceOnUse"><path id="c0" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/><path id="c1" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></mask></defs><g id="nomeG"></g></svg></div>
 <button type="button" class="pular" id="pular">Pular</button>
@@ -489,7 +570,7 @@ if (!window.__abre && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
 <script>
 // vídeos dos cartões: cada um começa num ponto diferente e só toca quando aparece na tela (poupa bateria e dados)
 document.querySelectorAll('.v video').forEach((v, i) => { v.addEventListener('loadedmetadata', () => { v.currentTime = (i * 1.7) % Math.max(1, v.duration); }, { once: true }); });
-const olho = new IntersectionObserver(es => es.forEach(e => { const v = e.target; if (e.isIntersecting && getComputedStyle(v).visibility !== 'hidden') v.play().catch(() => {}); else v.pause(); }), { rootMargin: '120px' });
+const olho = new IntersectionObserver(es => es.forEach(e => { const v = e.target; if (e.isIntersecting && getComputedStyle(v).visibility !== 'hidden') v.play().catch(() => {}); else v.pause(); }), { rootMargin: '0px' }); // 09/11: só toca o que está na tela (antes 120 px de folga, com até 2 vídeos a mais tocando fora da tela)
 document.querySelectorAll('video').forEach(v => olho.observe(v));
 // a abertura esconde a página enquanto roda: quando a página aparece (e no fim), os vídeos conferem de novo se estão na tela
 ['abertura-entrega', 'abertura-fim'].forEach(ev => document.addEventListener(ev, () => document.querySelectorAll('video').forEach(v => { olho.unobserve(v); olho.observe(v); })));
@@ -564,10 +645,10 @@ document.querySelectorAll('video').forEach(v => olho.observe(v));
   let saindo = [];
   function sai(url, midia, para, nome) {
     if (reduz) { try { sessionStorage.setItem('ss-interno', JSON.stringify({ para, t: Date.now() })); } catch (e) {} location.href = url; return; } // navegação interna: sem abertura
-    const r = midia && midia.getBoundingClientRect(), voo = { para, nome, t: Date.now() };
+    const r = midia && midia.getBoundingClientRect(), voo = { para, nome, de: location.pathname.split('/').pop(), t: Date.now() };
     saindo.push(camada('position:fixed;inset:0;z-index:90;background:var(--off);opacity:0'));
     if (r && r.width && r.bottom > 0 && r.top < innerHeight) {
-      voo.r = [r.left, r.top, r.width, r.height]; voo.raio = getComputedStyle(midia).borderRadius; voo.poster = midia.querySelector('video')?.getAttribute('poster') || '';
+      voo.r = [r.left, r.top, r.width, r.height]; voo.raio = getComputedStyle(midia).borderRadius; voo.poster = midia.querySelector('video')?.getAttribute('poster') || midia.querySelector('img')?.getAttribute('src') || '';
       saindo.push(camada(`position:fixed;z-index:91;left:${r.left}px;top:${r.top}px;width:${r.width}px;height:${r.height}px;border-radius:${voo.raio};background:#cbd2d7 url("${voo.poster}") center/cover`));
     }
     try { sessionStorage.setItem('ss-voo', JSON.stringify(voo)); } catch (e) {}
@@ -583,8 +664,8 @@ document.querySelectorAll('video').forEach(v => olho.observe(v));
     const u = new URL(h, location.href), pag = u.pathname.split('/').pop();
     if (u.origin !== location.origin || !/\.html$/.test(pag)) return;
     e.preventDefault();
-    const card = a.closest('.imovel'), capa = document.querySelector('.im .capa');
-    sai(u.href, card ? card.querySelector('.midia') : capa, pag, document.querySelector('.im h1')?.textContent.trim());
+    const card = a.closest('.imovel'), dq = a.closest('.destaque'), capa = document.querySelector('.im .capa');
+    sai(u.href, card ? card.querySelector('.midia') : dq ? dq.querySelector('.dq-midia') : capa, pag, document.querySelector('.im h1')?.textContent.trim());
   });
   // P1, chegada: a foto sai de onde estava na página anterior e vai até a capa (ou, na volta, até o cartão do imóvel, se ele estiver na tela)
   const v = window.__voo; if (!v) return;
@@ -592,7 +673,7 @@ document.querySelectorAll('video').forEach(v => olho.observe(v));
   const chega = () => {
     if (location.hash) { const el = document.querySelector(location.hash); if (el) scrollTo(0, alvoY(el)); }
     let alvo = document.querySelector('.im .capa');
-    if (!alvo && v.nome) alvo = [...document.querySelectorAll('#imoveis .imovel')].find(c => c.offsetWidth && c.querySelector('h3')?.textContent.trim() === v.nome)?.querySelector('.midia');
+    if (!alvo && v.nome) alvo = [...document.querySelectorAll('#imoveis .imovel')].find(c => c.offsetWidth && (c.querySelector('h3')?.textContent.trim() === v.nome || (v.de && c.querySelector('a.ver')?.getAttribute('href') === v.de)))?.querySelector('.midia');
     const r = alvo && alvo.getBoundingClientRect(), voa = !!(f && r && r.width && r.bottom > 0 && r.top < innerHeight);
     const fim = () => { veu?.remove(); f?.remove(); };
     if (voa) {
@@ -613,6 +694,20 @@ document.querySelectorAll('video').forEach(v => olho.observe(v));
   const ve = () => barra.classList.toggle('fora', na(alvo) || na(fim)); // sempre exatamente um par de botões à vista
   addEventListener('scroll', ve, { passive: true }); addEventListener('resize', ve); ve();
   document.fonts.ready.then(ve); addEventListener('load', ve); })(); // a página muda de altura quando as fontes chegam: confere de novo
+// celular e computador (09/11): as palavras de um bloco acendem sozinhas, linha a linha, quando o bloco entra na tela (sem depender da rolagem)
+window.__acende = (blocos, ws, resto = () => []) => {
+  const ob = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; ob.unobserve(e.target);
+    const p = [...ws(e.target)], linhas = [];
+    p.forEach(w => { const t = Math.round(w.getBoundingClientRect().top); let l = linhas.find(x => Math.abs(x.t - t) < 6); if (!l) linhas.push(l = { t, ws: [] }); l.ws.push(w); });
+    const passo = Math.min(.14, .9 / Math.max(1, linhas.length));
+    linhas.forEach((l, i) => gsap.to(l.ws, { opacity: 1, duration: .55, delay: i * passo, stagger: .015, ease: 'power1.out' }));
+    const r = resto(e.target) || []; // o que acende depois das palavras (botões, linha miúda), escolhido por bloco
+    if (r.length) gsap.to(r, { opacity: 1, duration: .6, delay: linhas.length * passo + .1, ease: 'power1.out' });
+  }), { rootMargin: '0px 0px -12% 0px' });
+  blocos.forEach(b => ob.observe(b));
+};
+
+
 // página do imóvel: separa um texto em palavras sem perder o destaque (.nome continua inteiro, na letra do título);
 // o texto inteiro continua no HTML para o Google e as IAs, só o navegador separa
 const palavras = el => { const out = []; [...el.childNodes].forEach(n => {
@@ -660,12 +755,8 @@ const palavras = el => { const out = []; [...el.childNodes].forEach(n => {
   if (!cel) blocos.push(...document.querySelectorAll('.im .amb h3'));
   blocos.forEach(b => {
     const ws = palavras(b), resto = b.closest('.fim') ? [b.closest('.fim').querySelector('.im-acoes')] : [];
-    gsap.set(ws, { color: 'rgba(2,53,68,.16)' }); if (resto.length) gsap.set(resto, { opacity: .16 });
-    const topo = () => b.getBoundingClientRect().top + scrollY, fundo = () => b.getBoundingClientRect().bottom + scrollY;
-    const tl = gsap.timeline({ scrollTrigger: { trigger: b, scrub: .6, invalidateOnRefresh: true, start: () => topo() - innerHeight * .9,
-      end: () => Math.max(topo() - innerHeight * .9 + 80, Math.min(ScrollTrigger.maxScroll(window) - 2, fundo() - innerHeight * .6)) } })
-      .to(ws, { color: '#023544', stagger: .1, duration: .3, ease: 'none' });
-    if (resto.length) tl.to(resto, { opacity: 1, duration: .6, ease: 'none' });
+    gsap.set(ws, { opacity: .16 }); if (resto.length) gsap.set(resto, { opacity: .16 });
+    b._ws = ws; window.__acende([b], x => x._ws, () => resto); // 09/11: acende ao entrar, no celular e no computador (sem depender da rolagem)
   });
   document.fonts.ready.then(() => ScrollTrigger.refresh());
 })();
@@ -1034,7 +1125,8 @@ function abertura(curta){
       .to(linhas, { yPercent: 0, duration: 1.05, stagger: .08, ease: 'sara' }, T0 + .55)
       .to(resto, { opacity: 1, y: 0, duration: .9, stagger: .07, ease: 'sara' }, T0 + .8);
   }
-  if (curta) tl.seek(2.95);
+  // 09/11: quem volta vê a abertura inteira, com o mar, só que mais rápida (antes ela pulava para as folhas já no ar, sem o mar e com um corte seco)
+  if (curta) tl.timeScale(1.45);
 }
 const botao = document.getElementById('pular');
 botao.addEventListener('click', () => { if (tl && tl.progress() < 1) tl.progress(1); });
@@ -1047,6 +1139,10 @@ async function comecar(){
   if (document.visibilityState !== 'visible'){ document.addEventListener('visibilitychange', comecar, { once: true }); return; }
   try {
     MAT = await preparaFolhas(); await document.fonts.ready;
+    // 09/11: aquece o 3D antes de o relógio da abertura correr. O primeiro desenho prepara os shaders e sobe as texturas para a placa
+    // de vídeo (0,5 s ou mais parado); feito aqui, o primeiro quadro da animação já sai pronto e o mar começa sem travar.
+    monta(); Object.assign(E, { t: 0, ondas: 0, vira: 0, voa: 0, tinta: 0, fim: 0 }); desenha();
+    await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
     let viu = false; try { viu = localStorage.getItem('sara-abertura') === '1'; } catch (e) {}
     abertura(viu && !new URLSearchParams(location.search).has('completa'));
     window.__pronto = true;
