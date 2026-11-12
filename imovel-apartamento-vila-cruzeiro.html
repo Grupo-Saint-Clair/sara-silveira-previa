@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Apartamento à venda na Vila Cruzeiro, Divinópolis | Sara Silveira</title>
 <meta name="description" content="Apartamento de alto padrão à venda na Vila Cruzeiro, em Divinópolis (MG): cozinha planejada com bancadas em granito, um ambiente fechado em vidro com janelas para a cidade e sala com painel de madeira e estantes sob medida. Visita com Sara Silveira.">
@@ -404,6 +404,19 @@ body.abrindo{overflow:hidden}
 .im-barra .b1{flex:1;text-align:center;padding:14px}.im-barra .b2{padding:6px 14px 6px 6px}
 .im-barra{transition:transform .5s cubic-bezier(.65,0,.2,1),opacity .4s}.im-barra.fora{transform:translateY(calc(100% + 16px));opacity:0;pointer-events:none}
 body{padding-bottom:84px}
+/* 12/11 (páginas da Sara): destaque panorâmico, plantas inteiras e diferenciais (campos opcionais DESTAQUE, p:NNN, DIFERENCIAIS) */
+.im-dq{margin:46px 0 0}.im-dq .dq-m{aspect-ratio:4/3}.im-dq .dq-t{max-width:760px;margin:16px auto 0;text-align:center}
+.im-dq h2,.im-dif h2{font-family:var(--serifa);font-weight:400;font-size:30px;line-height:1.05;margin:0 8px}.im-dq .apoio{margin:8px 8px 0}
+.im-v img.planta,.minis button img.planta{object-fit:contain;background:#fff;padding:2%;box-sizing:border-box}
+.im .amb:has(.cena img.planta) .cena{aspect-ratio:3/2}
+.im-dif{max-width:860px;margin:70px auto 0;text-align:center}.im-dif ul{list-style:none;margin:18px 8px 0;padding:0;display:grid;gap:0;text-align:left}
+.im .fim .calma{font-family:var(--serifa);font-size:1.18em;line-height:1;color:#023544;white-space:nowrap}.im .fim .calma .c{color:#9aa8ae}   /* 12/11, opção B escolhida pelo Vitor: o jogo de palavras da Sara, "c[alma]" (a alma dentro da calma) */
+.im-dif li{padding:13px 4px;border-bottom:1.5px solid #dde2e6;font-size:16px;line-height:1.4}
+@media (min-width:900px){
+  .im-dq{margin-top:70px}.im-dq .dq-m{aspect-ratio:auto;height:min(62vh,560px)}.im-dq .dq-t{margin-top:22px}.im-dq h2,.im-dif h2{font-size:48px}
+  .im .amb:has(.cena img.planta) .cena{height:auto;aspect-ratio:3/2}
+  .im-dif{margin-top:100px}.im-dif ul{grid-template-columns:1fr 1fr;column-gap:40px}
+}
 @media (min-width:900px){
   body{padding-bottom:0}.im-barra{display:none}
   .im{padding:24px 40px 60px}.im h1{font-size:60px}
@@ -482,21 +495,21 @@ if (!window.__abre && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   <div class="intro"><p class="apoio">Um ambiente fechado em <span class="nome">vidro</span> mantém tudo à vista. Da sala se enxergam a marcenaria planejada, as bancadas e as janelas largas abertas para a cidade, com a luz do dia atravessando o apartamento.</p>
   <p class="apoio">Os ambientes seguem o mesmo cuidado: sala ampla com piso de grande formato, painel de madeira e estantes sob medida, cozinha planejada com bancadas em granito, quartos com piso amadeirado e armários planejados e banheiro revestido.</p></div>
   <div class="ambs">
-    <section class="amb" aria-label="A sala"><div class="lado"><div class="im-v v cena "><video muted loop playsinline autoplay preload="metadata" poster="video/ap-204/sala-estantes-capa.jpg" aria-label="Sala com painel de madeira e estantes sob medida"><source src="video/ap-204/sala-estantes.mp4" type="video/mp4"></video></div><div class="minis" role="group" aria-label="Fotos e vídeos: A sala"><button type="button" class="on" aria-pressed="true" aria-label="Ver vídeo: Sala com painel de madeira e estantes sob medida" data-video="video/ap-204/sala-estantes.mp4" data-poster="video/ap-204/sala-estantes-capa.jpg" data-alt="Sala com painel de madeira e estantes sob medida"><img src="video/ap-204/sala-estantes-capa.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button><button type="button" class="" aria-pressed="false" aria-label="Ver foto: Sala com painel de madeira e estantes sob medida" data-foto="img/ap-204/008.webp" data-alt="Sala com painel de madeira e estantes sob medida"><img src="img/ap-204/008.webp" alt="" loading="lazy"></button><button type="button" class="" aria-pressed="false" aria-label="Ver foto: Sala ampla com estantes, nichos e piso de grande formato" data-foto="img/ap-204/014.webp" data-alt="Sala ampla com estantes, nichos e piso de grande formato"><img src="img/ap-204/014.webp" alt="" loading="lazy"></button></div></div><div class="txt"><h3>A sala</h3><p class="apoio">Sala ampla com piso de grande formato, painel de madeira e estantes com nichos sob medida.</p></div></section>
+    <section class="amb" aria-label="A sala"><div class="lado"><div class="im-v cena "><img src="img/ap-204/008.webp" alt="Sala com painel de madeira e estantes sob medida"></div><div class="minis" role="group" aria-label="Fotos e vídeos: A sala"><button type="button" class="on" aria-pressed="true" aria-label="Ver foto: Sala com painel de madeira e estantes sob medida" data-foto="img/ap-204/008.webp" data-alt="Sala com painel de madeira e estantes sob medida"><img src="img/ap-204/008.webp" alt="" loading="lazy"></button><button type="button" class="" aria-pressed="false" aria-label="Ver foto: Sala ampla com estantes, nichos e piso de grande formato" data-foto="img/ap-204/014.webp" data-alt="Sala ampla com estantes, nichos e piso de grande formato"><img src="img/ap-204/014.webp" alt="" loading="lazy"></button></div></div><div class="txt"><h3>A sala</h3><p class="apoio">Sala ampla com piso de grande formato, painel de madeira e estantes com nichos sob medida.</p></div></section>
     <section class="amb" aria-label="Os quartos"><div class="lado"><div class="im-v cena "><img src="img/ap-204/013.webp" alt="Quarto com painel ripado, bancada e penteadeira embutida"></div><div class="minis" role="group" aria-label="Fotos e vídeos: Os quartos"><button type="button" class="on" aria-pressed="true" aria-label="Ver foto: Quarto com painel ripado, bancada e penteadeira embutida" data-foto="img/ap-204/013.webp" data-alt="Quarto com painel ripado, bancada e penteadeira embutida"><img src="img/ap-204/013.webp" alt="" loading="lazy"></button><button type="button" class="" aria-pressed="false" aria-label="Ver foto: Quarto com armário planejado e piso amadeirado" data-foto="img/ap-204/009.webp" data-alt="Quarto com armário planejado e piso amadeirado"><img src="img/ap-204/009.webp" alt="" loading="lazy"></button><button type="button" class="" aria-pressed="false" aria-label="Ver foto: Quarto com armário planejado, bancada e janela" data-foto="img/ap-204/012.webp" data-alt="Quarto com armário planejado, bancada e janela"><img src="img/ap-204/012.webp" alt="" loading="lazy"></button></div></div><div class="txt"><h3>Os quartos</h3><p class="apoio">Quartos com piso amadeirado e armários planejados. Em um deles, painel ripado, bancada e penteadeira embutida.</p></div></section>
     <section class="amb" aria-label="O banho"><div class="lado"><div class="im-v cena "><img src="img/ap-204/010.webp" alt="Banheiro revestido, com box de vidro e armário com espelho"></div></div><div class="txt"><h3>O banho</h3><p class="apoio">Banheiro revestido, com box de vidro e armário com espelho sobre a bancada.</p></div></section>
-    <section class="amb" aria-label="A cozinha e a cidade"><div class="lado"><div class="im-v v cena "><video muted loop playsinline autoplay preload="metadata" poster="video/ap-204/cidade-capa.jpg" aria-label="Da sala ao ambiente em vidro, à cozinha e às janelas com a cidade"><source src="video/ap-204/cidade.mp4" type="video/mp4"></video></div><div class="minis" role="group" aria-label="Fotos e vídeos: A cozinha e a cidade"><button type="button" class="on" aria-pressed="true" aria-label="Ver vídeo: Da sala ao ambiente em vidro, à cozinha e às janelas com a cidade" data-video="video/ap-204/cidade.mp4" data-poster="video/ap-204/cidade-capa.jpg" data-alt="Da sala ao ambiente em vidro, à cozinha e às janelas com a cidade"><img src="video/ap-204/cidade-capa.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button><button type="button" class="" aria-pressed="false" aria-label="Ver foto: Cozinha planejada com bancada em granito preto e janelas para a cidade" data-foto="img/ap-204/003.webp" data-alt="Cozinha planejada com bancada em granito preto e janelas para a cidade"><img src="img/ap-204/003.webp" alt="" loading="lazy"></button><button type="button" class="" aria-pressed="false" aria-label="Ver foto: Cozinha planejada em L com bancada em granito preto" data-foto="img/ap-204/004.webp" data-alt="Cozinha planejada em L com bancada em granito preto"><img src="img/ap-204/004.webp" alt="" loading="lazy"></button></div></div><div class="txt"><h3>A cozinha e a cidade</h3><p class="apoio">No fim, a cozinha planejada se abre em bancadas de granito preto e janelas largas voltadas para a cidade, ao lado do ambiente fechado em vidro.</p></div></section>
+    <section class="amb" aria-label="A cozinha e a cidade"><div class="lado"><div class="im-v cena "><img src="img/ap-204/003.webp" alt="Cozinha planejada com bancada em granito preto e janelas para a cidade"></div><div class="minis" role="group" aria-label="Fotos e vídeos: A cozinha e a cidade"><button type="button" class="on" aria-pressed="true" aria-label="Ver foto: Cozinha planejada com bancada em granito preto e janelas para a cidade" data-foto="img/ap-204/003.webp" data-alt="Cozinha planejada com bancada em granito preto e janelas para a cidade"><img src="img/ap-204/003.webp" alt="" loading="lazy"></button><button type="button" class="" aria-pressed="false" aria-label="Ver foto: Cozinha planejada em L com bancada em granito preto" data-foto="img/ap-204/004.webp" data-alt="Cozinha planejada em L com bancada em granito preto"><img src="img/ap-204/004.webp" alt="" loading="lazy"></button></div></div><div class="txt"><h3>A cozinha e a cidade</h3><p class="apoio">No fim, a cozinha planejada se abre em bancadas de granito preto e janelas largas voltadas para a cidade, ao lado do ambiente fechado em vidro.</p></div></section>
   </div>
   <div class="fim"><p class="apoio">Quer conhecer este <span class="nome">apartamento</span> pessoalmente?</p><div class="acoes im-acoes"><a class="b1" href="#">Agendar visita</a><a class="b2" href="#"><span class="wpp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg></span>Falar com a Sara</a></div></div>
 </main>
 <section class="im-outros" aria-label="Outros imóveis da coleção"><h2>Outros imóveis da coleção</h2><div class="grade"><article class="imovel" data-tipo="cobertura" data-cidade="Divinópolis" data-preco="1750000" data-suites="2" data-bairro="Sidil">
-      <div class="midia v"><video muted loop playsinline autoplay preload="metadata" poster="video/piaui/convivio-sala-capa.jpg" aria-hidden="true"><source src="video/piaui/convivio-sala.mp4" type="video/mp4"></video></div>
+      <div class="midia v"><img src="img/piaui/014.webp" alt="Estar do segundo andar" loading="lazy"></div>
       <div class="ficha"><div class="ficha-topo"><h3>Cobertura duplex de 389&nbsp;m²</h3><a class="ver" href="imovel-piaui.html">Ver imóvel</a></div><dl><div><dt>Preço</dt><dd class="preco">R$ 1.750.000</dd></div><div><dt>Localização</dt><dd>Sidil, Divinópolis (MG)</dd></div><div><dt>Área</dt><dd>389 m²</dd></div></dl></div>
     </article><article class="imovel" data-tipo="cobertura" data-cidade="Divinópolis" data-preco="1990000" data-suites="2" data-bairro="Vila Cruzeiro">
-      <div class="midia v"><video muted loop playsinline autoplay preload="metadata" poster="video/cobertura-1302/cartao-capa.jpg" aria-hidden="true"><source src="video/cobertura-1302/cartao.mp4" type="video/mp4"></video></div>
+      <div class="midia v"><img src="img/cobertura-1302/003.webp" alt="Terraço com vista aberta para a cidade" loading="lazy"></div>
       <div class="ficha"><div class="ficha-topo"><h3>Cobertura duplex de 242&nbsp;m²</h3><a class="ver" href="imovel-cobertura-vila-cruzeiro.html">Ver imóvel</a></div><dl><div><dt>Preço</dt><dd class="preco">R$ 1.990.000</dd></div><div><dt>Localização</dt><dd>Vila Cruzeiro, Divinópolis (MG)</dd></div><div><dt>Área</dt><dd>242 m²</dd></div></dl></div>
     </article><article class="imovel" data-tipo="apartamento" data-cidade="Divinópolis" data-preco="1100000" data-suites="2" data-bairro="Centro">
-      <div class="midia v"><video muted loop playsinline autoplay preload="metadata" poster="video/lumini/cartao-capa.jpg" aria-hidden="true"><source src="video/lumini/cartao.mp4" type="video/mp4"></video></div>
+      <div class="midia v"><img src="img/lumini/007.webp" alt="Sala ampla com rasgos de luz no forro e porta de vidro" loading="lazy"></div>
       <div class="ficha"><div class="ficha-topo"><h3>Apartamento de 254&nbsp;m²</h3><a class="ver" href="imovel-apartamento-divinopolis.html">Ver imóvel</a></div><dl><div><dt>Preço</dt><dd class="preco">R$ 1.100.000</dd></div><div><dt>Localização</dt><dd>Centro, Divinópolis (MG)</dd></div><div><dt>Área</dt><dd>254 m²</dd></div></dl></div>
     </article></div></section>
 <footer class="rodape"><span>Sara Silveira Collection</span><span>Divinópolis · Nova Serrana (MG)</span><span>CRECI 64.725</span><span>© 2026</span></footer>
@@ -739,7 +752,7 @@ const palavras = el => { const out = []; [...el.childNodes].forEach(n => {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || !window.gsap) return;
   gsap.registerPlugin(ScrollTrigger);
   const E = 'cubic-bezier(.65,0,.2,1)';
-  const fotos = [...document.querySelectorAll('.im .amb .cena, .im-outros .midia')];
+  const fotos = [...document.querySelectorAll('.im .amb .cena, .im .im-dq .dq-m, .im-outros .midia')];
   const ob = new IntersectionObserver(es => { let i = 0; es.forEach(e => { if (!e.isIntersecting) return; ob.unobserve(e.target);
     const f = e.target._foto, d = i++ * 120;
     f.animate([{ clipPath: 'inset(100% 0 0 0 round 20px)' }, { clipPath: 'inset(0% 0 0 0 round 20px)' }], { duration: 900, delay: d, easing: E, fill: 'backwards' })
@@ -747,8 +760,8 @@ const palavras = el => { const out = []; [...el.childNodes].forEach(n => {
     const ms = e.target.querySelectorAll('.minis button');
     ms.forEach((b, k) => b.animate([{ opacity: 0, transform: 'translateY(8px)' }, { transform: 'none' }], { duration: 450, delay: d + 550 + k * 60, easing: E, fill: 'backwards' }));
   }); }, { rootMargin: '0px 0px -12% 0px' });
-  fotos.forEach(f => { const p = f.closest('.amb, .imovel'); p._foto = f; f.classList.add('espera'); ob.observe(p); });
-  const blocos = [...document.querySelectorAll('.im .intro .apoio, .im .amb h3, .im .amb .apoio, .im .fim .apoio, .im-outros h2')];
+  fotos.forEach(f => { const p = f.closest('.amb, .im-dq, .imovel'); p._foto = f; f.classList.add('espera'); ob.observe(p); });
+  const blocos = [...document.querySelectorAll('.im .intro .apoio, .im .im-dq h2, .im .im-dq .apoio, .im .amb h3, .im .amb .apoio, .im .im-dif h2, .im .im-dif li, .im .fim .apoio, .im-outros h2')];
   blocos.forEach(b => {
     const ws = palavras(b), resto = b.closest('.fim') ? [b.closest('.fim').querySelector('.im-acoes')] : [];
     gsap.set(ws, { opacity: .16 }); if (resto.length) gsap.set(resto, { opacity: .16 });
@@ -769,7 +782,7 @@ const palavras = el => { const out = []; [...el.childNodes].forEach(n => {
       const d = bt.dataset, novo = document.createElement('div');
       novo.className = 'im-v cena' + (d.video ? ' v' : '');
       novo.innerHTML = d.video ? `<video muted loop playsinline autoplay preload="auto" poster="${d.poster}" aria-label="${d.alt}"><source src="${d.video}" type="video/mp4"></video>`
-                               : `<img src="${d.foto}" alt="${d.alt}">`;
+                               : `<img src="${d.foto}" alt="${d.alt}"${d.planta ? ' class="planta"' : ''}>`;
       const rc = velha.getBoundingClientRect(), rm = bt.getBoundingClientRect();
       Object.assign(novo.style, { position: 'absolute', left: velha.offsetLeft + 'px', top: velha.offsetTop + 'px', width: rc.width + 'px', height: rc.height + 'px', zIndex: 2, margin: 0 });
       velha.after(novo); lado._ocupado = true;
