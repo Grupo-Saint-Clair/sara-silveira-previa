@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Apartamento à venda na Vila Cruzeiro, Divinópolis | Sara Silveira</title>
 <meta name="description" content="Apartamento de alto padrão à venda na Vila Cruzeiro, em Divinópolis (MG): cozinha planejada com bancadas em granito, um ambiente fechado em vidro com janelas para a cidade e sala com painel de madeira e estantes sob medida. Visita com Sara Silveira.">
@@ -1166,7 +1166,9 @@ async function comecar(){
     MAT = await preparaFolhas(); await document.fonts.ready;
     // 09/11: aquece o 3D antes de o relógio da abertura correr. O primeiro desenho prepara os shaders e sobe as texturas para a placa
     // de vídeo (0,5 s ou mais parado); feito aqui, o primeiro quadro da animação já sai pronto e o mar começa sem travar.
-    monta(); Object.assign(E, { t: 0, ondas: 0, vira: 0, voa: 0, tinta: 0, fim: 0 }); desenha();
+    monta(); Object.assign(E, { t: 0, ondas: 0, vira: 0, voa: 0, tinta: 0, fim: 0 });
+    // 12/11: o S fica escondido no aquecimento (antes aparecia inteiro por um instante antes do mar); abertura() devolve a tinta a zero e mostra o grupo
+    gsap.set(['#c0', '#c1'], { drawSVG: '0%' }); gsap.set(gNome, { autoAlpha: 0 }); desenha();
     await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
     let viu = false; try { viu = localStorage.getItem('sara-abertura') === '1'; } catch (e) {}
     abertura(viu && !new URLSearchParams(location.search).has('completa'));
